@@ -1,0 +1,10 @@
+# Runtime
+fastapi>=0.110,<0.116
+uvicorn[standard]>=0.27,<0.35
+pydantic>=2.6,<3
+pydantic-settings>=2.2,<3
+anthropic>=0.40
+
+# Dev / test
+pytest>=8.0
+httpx>=0.27

@@ -1,0 +1,17 @@
+[project]
+name = "idbi-wealth-copilot"
+version = "0.1.0"
+description = "IDBI Wealth Copilot — an avatar-led, agentic, explainable AI wealth advisor (IDBI Innovate 2026, Track 01)."
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

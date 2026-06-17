@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 640" font-family="Inter, Segoe UI, Arial, sans-serif">
+  <rect width="860" height="640" fill="#0b1020"/>
+  <text x="430" y="38" fill="#e7edf8" font-size="22" font-weight="700" text-anchor="middle">IDBI Wealth Copilot — System Architecture</text>
+  <text x="430" y="60" fill="#8a99b7" font-size="13" text-anchor="middle">Avatar-led, agentic, explainable AI wealth advisory · IDBI Innovate 2026 · Track 01</text>
+
+  <!-- Layer 1: Browser UI -->
+  <rect x="40" y="86" width="780" height="118" rx="14" fill="#101a2e" stroke="#22e3c8" stroke-width="1.5"/>
+  <text x="60" y="112" fill="#22e3c8" font-size="13" font-weight="700">1 · BROWSER UI  (web/, no build step)</text>
+  <g font-size="12" fill="#dfe7f5">
+    <rect x="60" y="124" width="170" height="64" rx="9" fill="#16233d"/>
+    <text x="145" y="150" text-anchor="middle" font-weight="600">3D AI avatar</text>
+    <text x="145" y="170" text-anchor="middle" fill="#8a99b7">Three.js · voice-reactive</text>
+
+    <rect x="245" y="124" width="170" height="64" rx="9" fill="#16233d"/>
+    <text x="330" y="150" text-anchor="middle" font-weight="600">Voice chat</text>
+    <text x="330" y="170" text-anchor="middle" fill="#8a99b7">Web Speech: talk + speak</text>
+
+    <rect x="430" y="124" width="170" height="64" rx="9" fill="#16233d"/>
+    <text x="515" y="150" text-anchor="middle" font-weight="600">Charts</text>
+    <text x="515" y="170" text-anchor="middle" fill="#8a99b7">Chart.js · donut/line/bar</text>
+
+    <rect x="615" y="124" width="185" height="64" rx="9" fill="#16233d"/>
+    <text x="707" y="150" text-anchor="middle" font-weight="600">Chat + intent router</text>
+    <text x="707" y="170" text-anchor="middle" fill="#8a99b7">data Q → chart, else LLM</text>
+  </g>
+
+  <!-- arrow -->
+  <line x1="430" y1="204" x2="430" y2="232" stroke="#5a6b85" stroke-width="2"/>
+  <polygon points="430,238 424,228 436,228" fill="#5a6b85"/>
+  <text x="446" y="226" fill="#8a99b7" font-size="11">HTTP / JSON</text>
+
+  <!-- Layer 2: FastAPI -->
+  <rect x="40" y="240" width="780" height="86" rx="14" fill="#101a2e" stroke="#a472ff" stroke-width="1.5"/>
+  <text x="60" y="266" fill="#a472ff" font-size="13" font-weight="700">2 · FASTAPI  (app/api, app/main)</text>
+  <g font-size="11.5" fill="#dfe7f5">
+    <rect x="60" y="278" width="150" height="34" rx="8" fill="#16233d"/><text x="135" y="300" text-anchor="middle">/insights</text>
+    <rect x="220" y="278" width="150" height="34" rx="8" fill="#16233d"/><text x="295" y="300" text-anchor="middle">/goal-plan · /simulate</text>
+    <rect x="380" y="278" width="120" height="34" rx="8" fill="#16233d"/><text x="440" y="300" text-anchor="middle">/risk</text>
+    <rect x="510" y="278" width="140" height="34" rx="8" fill="#16233d"/><text x="580" y="300" text-anchor="middle">/products</text>
+    <rect x="660" y="278" width="140" height="34" rx="8" fill="#16233d"/><text x="730" y="300" text-anchor="middle">/chat (agent)</text>
+  </g>
+
+  <line x1="300" y1="326" x2="300" y2="356" stroke="#5a6b85" stroke-width="2"/>
+  <polygon points="300,362 294,352 306,352" fill="#5a6b85"/>
+  <line x1="600" y1="326" x2="600" y2="356" stroke="#5a6b85" stroke-width="2"/>
+  <polygon points="600,362 594,352 606,352" fill="#5a6b85"/>
+
+  <!-- Layer 3: Agent + Quant + RAG -->
+  <rect x="40" y="364" width="430" height="150" rx="14" fill="#101a2e" stroke="#ffb02e" stroke-width="1.5"/>
+  <text x="60" y="390" fill="#ffb02e" font-size="13" font-weight="700">3 · QUANT ENGINE  (app/quant) — the moat</text>
+  <g font-size="12" fill="#dfe7f5">
+    <rect x="60" y="402" width="185" height="42" rx="8" fill="#16233d"/><text x="152" y="428" text-anchor="middle">risk · profiling</text>
+    <rect x="255" y="402" width="195" height="42" rx="8" fill="#16233d"/><text x="352" y="428" text-anchor="middle">goals · portfolio</text>
+    <rect x="60" y="454" width="185" height="42" rx="8" fill="#16233d"/><text x="152" y="480" text-anchor="middle">insights · nudges</text>
+    <rect x="255" y="454" width="195" height="42" rx="8" fill="#16233d"/><text x="352" y="480" text-anchor="middle">pure functions · tested</text>
+  </g>
+
+  <rect x="490" y="364" width="330" height="150" rx="14" fill="#101a2e" stroke="#ff5cc8" stroke-width="1.5"/>
+  <text x="510" y="390" fill="#ff5cc8" font-size="13" font-weight="700">AGENT + TRUST  (app/agent)</text>
+  <g font-size="12" fill="#dfe7f5">
+    <rect x="510" y="402" width="290" height="42" rx="8" fill="#16233d"/><text x="655" y="428" text-anchor="middle">Claude claude-opus-4-8 · tool-calling loop</text>
+    <rect x="510" y="454" width="140" height="42" rx="8" fill="#16233d"/><text x="580" y="480" text-anchor="middle">Product RAG</text>
+    <rect x="660" y="454" width="140" height="42" rx="8" fill="#2a1430" stroke="#ff5cc8"/><text x="730" y="475" text-anchor="middle">Guardrails</text>
+    <text x="730" y="489" text-anchor="middle" font-size="10" fill="#ffb0d8">no fake returns</text>
+  </g>
+
+  <line x1="430" y1="514" x2="430" y2="544" stroke="#5a6b85" stroke-width="2"/>
+  <polygon points="430,550 424,540 436,540" fill="#5a6b85"/>
+  <text x="446" y="538" fill="#8a99b7" font-size="11">provider interface (swap seam)</text>
+
+  <!-- Layer 4: Data -->
+  <rect x="40" y="552" width="780" height="68" rx="14" fill="#101a2e" stroke="#2fe39a" stroke-width="1.5"/>
+  <text x="60" y="578" fill="#2fe39a" font-size="13" font-weight="700">4 · DATA  (app/providers, data/)</text>
+  <g font-size="12" fill="#dfe7f5">
+    <rect x="60" y="586" width="230" height="26" rx="7" fill="#16233d"/><text x="175" y="603" text-anchor="middle">mock: synthetic customers + txns</text>
+    <rect x="300" y="586" width="230" height="26" rx="7" fill="#16233d"/><text x="415" y="603" text-anchor="middle">product catalogue (RAG truth)</text>
+    <rect x="540" y="586" width="260" height="26" rx="7" fill="#101a2e" stroke="#3a4d6d" stroke-dasharray="4 3"/><text x="670" y="603" text-anchor="middle" fill="#8a99b7">sandbox: IDBI APIs (after shortlist)</text>
+  </g>
+</svg>

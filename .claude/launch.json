@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wealth-copilot",
+      "autoPort": true,
+      "runtimeExecutable": "/Users/rahulsingh/Desktop/IDBI Wealth Copilot/backend/.venv/bin/python",
+      "runtimeArgs": [
+        "-c",
+        "import os,sys,uvicorn; sys.path.insert(0, '/Users/rahulsingh/Desktop/IDBI Wealth Copilot/backend'); uvicorn.run('app.main:app', host='127.0.0.1', port=int(os.environ.get('PORT','8000')))"
+      ],
+      "port": 8000
+    }
+  ]
+}

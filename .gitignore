@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Secrets
+.env
+
+# Generated data (regenerate with `python -m data.generate`)
+backend/data/synthetic/*.json
+!backend/data/synthetic/demo_customers.json
+
+# OS
+.DS_Store

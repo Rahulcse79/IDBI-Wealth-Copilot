@@ -1,0 +1,76 @@
+[
+  {
+    "customer_id": "CUST-DEMO-1",
+    "name": "Aarav Sharma",
+    "age": 28,
+    "city": "Bengaluru",
+    "occupation": "salaried",
+    "monthly_income": 95000,
+    "dependents": 0,
+    "accounts": [
+      {
+        "kind": "savings",
+        "balance": 853261.63
+      }
+    ],
+    "existing_investments": [
+      {
+        "kind": "fixed_deposit",
+        "value": 50000
+      }
+    ],
+    "risk_appetite": null
+  },
+  {
+    "customer_id": "CUST-DEMO-2",
+    "name": "Meera Iyer",
+    "age": 34,
+    "city": "Mumbai",
+    "occupation": "salaried",
+    "monthly_income": 140000,
+    "dependents": 1,
+    "accounts": [
+      {
+        "kind": "savings",
+        "balance": 1023819.09
+      }
+    ],
+    "existing_investments": [
+      {
+        "kind": "mutual_fund",
+        "value": 600000
+      },
+      {
+        "kind": "fixed_deposit",
+        "value": 200000
+      }
+    ],
+    "risk_appetite": null
+  },
+  {
+    "customer_id": "CUST-DEMO-3",
+    "name": "Rohan Verma",
+    "age": 45,
+    "city": "Pune",
+    "occupation": "self_employed",
+    "monthly_income": 180000,
+    "dependents": 2,
+    "accounts": [
+      {
+        "kind": "savings",
+        "balance": 1575353.25
+      }
+    ],
+    "existing_investments": [
+      {
+        "kind": "mutual_fund",
+        "value": 1200000
+      },
+      {
+        "kind": "pension",
+        "value": 450000
+      }
+    ],
+    "risk_appetite": null
+  }
+]
