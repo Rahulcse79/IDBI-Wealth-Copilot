@@ -4,14 +4,14 @@
 
 ## The home screen
 
-![Home — dark](screenshots/01-hero-dark.png)
+![Home — light mode](screenshots/01-snapshot-charts.png)
 
 Two panes on one screen:
 - **Left** — the IDBI logo, "Meet Aanya", and the **3D AI avatar** with a live status dot.
 - **Right** — the **conversation**: quick-action chips, the message thread, and the mic + text composer.
 - **Top bar** — online status, the **customer selector**, and a **light/dark toggle** (persisted across refreshes).
 
-![Home — light](screenshots/02-hero-light.png)
+![Home — dark mode](screenshots/03-products.png)
 
 ## Two ways to get an answer
 
@@ -32,7 +32,7 @@ This means **data questions are answered instantly and visually**, and only open
 
 *Triggers: "My snapshot", "where my money goes", "spending", "where do I start".*
 
-![Snapshot with charts](screenshots/03-snapshot-charts.png)
+![Snapshot with charts](screenshots/01-snapshot-charts.png)
 
 1. `GET /api/customers/{id}/insights` → `app/quant/insights.py` analyses the transaction ledger.
 2. It estimates **monthly income** (mean of salary credits), **expenses**, **savings rate**, **idle cash** (savings above a 6-month emergency buffer), and flags **high-interest EMIs**.
@@ -43,7 +43,7 @@ This means **data questions are answered instantly and visually**, and only open
 
 *Triggers: "Plan ₹50L house", "Retirement plan", "plan 1 crore in 20 years", "save for…".*
 
-![Goal plan](screenshots/04-goal-plan.png)
+![Goal plan](screenshots/02-goal-plan.png)
 
 1. `POST /api/goal-plan` → `app/quant/goals.py`.
 2. The risk bucket comes from `assess_risk` (or is passed in); the portfolio (`portfolio.py`) gives a blended expected return.
@@ -60,15 +60,13 @@ This means **data questions are answered instantly and visually**, and only open
 
 *Triggers: "My risk profile", "how much risk", "aggressive/conservative".*
 
-![Risk profile gauge](screenshots/05-risk-profile.png)
-
 `POST /api/risk` → `app/quant/risk.py` computes a 0–100 risk-capacity score from an **additive, fully explainable** rubric (age, horizon, loss tolerance, income stability, dependents, emergency fund). The UI renders a **score ring gauge** plus a **factor-by-factor breakdown** so every point is justified — exactly the explainability a bank reviewer wants.
 
 ## Visual flow 4 — Products
 
 *Triggers: "best products", "where to invest", "tax-saving", "low-risk fund".*
 
-![Products](screenshots/06-products.png)
+![Products](screenshots/03-products.png)
 
 `GET /api/products?q=…` → the **TF-IDF retriever** ranks the catalogue. The UI lists matches (name, category, risk, min investment, **indicative** return) and a **bar chart comparing indicative returns** — always labelled indicative, never guaranteed.
 
@@ -88,7 +86,7 @@ final answer ──► guardrail validate ──► (if violation) one correctiv
 
 The model can **only** answer by composing tools (`get_customer_profile`, `get_next_best_actions`, `assess_risk`, `plan_goal`, `simulate_goal`, `search_products`). Each reply carries a **"Why this?"** trail of the data lookups it made.
 
-![Voice + guardrail](screenshots/07-voice-guardrail.png)
+![Voice — the avatar shifts to a listening state](screenshots/03-products.png)
 
 ## Guardrails (trust layer)
 

@@ -1,24 +1,18 @@
 # Screenshots
 
-Drop PNGs with these exact filenames here and they render automatically in
-[HOW_IT_WORKS.md](../HOW_IT_WORKS.md) and the main [README](../README.md).
+Current captures of the running prototype (used in the README, the docs, and the
+submission deck):
 
-## Capture list
+| File | Shows |
+|------|-------|
+| `01-snapshot-charts.png` | Home (light) + the **snapshot** flow — spending doughnut, income/spending bars, ranked actions |
+| `02-goal-plan.png` | Home (light) + the **goal plan** — allocation doughnut, projected-growth line, what-if slider |
+| `03-products.png` | Home (dark) + the **products** flow — match list and indicative-return bars (avatar listening) |
 
-| File | What it should show | How to get there |
-|------|---------------------|------------------|
-| `01-hero-dark.png` | The two-pane home screen in **dark** mode — 3D avatar + conversation | Open `localhost:8000` |
-| `02-hero-light.png` | Same screen in **light** mode | Click the ☀️/🌙 toggle in the top bar |
-| `03-snapshot-charts.png` | Snapshot card with the **spending doughnut + income/spending bars** | Click **My snapshot** |
-| `04-goal-plan.png` | Goal card with the **allocation doughnut + projected-growth line + slider** | Click **Plan ₹50L house** |
-| `05-risk-profile.png` | The **risk-score ring gauge** + factor breakdown | Click **My risk profile** |
-| `06-products.png` | Product list + **indicative-return bar chart** | Click **Best products** |
-| `07-voice-guardrail.png` | Mic listening (avatar magenta) and/or the **guardrail** reply | Press 🎙 or click **Are you safe?** |
+## Adding more
 
-## How to capture (macOS)
+Drop additional PNGs here and reference them from the docs. Suggested extras:
+`04-risk-profile.png` (the risk-score ring gauge) and a close-up of the **guardrail** reply.
 
-1. Run the app: `./start.sh` → open **Chrome** at `localhost:8000`.
-2. Press **Cmd + Shift + 4**, then **Space**, then click the Chrome window (captures just the window), or drag a region.
-3. Rename the saved file to the name above and move it into this folder.
-
-> Tip: capture at a wide window so both panes show. Take both a dark and a light shot for `01`/`02`.
+To capture on macOS: open the app (`./start.sh` → `localhost:8000` in Chrome),
+click the relevant quick action, then **Cmd + Shift + 4 → Space → click the window**.

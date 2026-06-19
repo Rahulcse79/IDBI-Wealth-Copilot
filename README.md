@@ -16,6 +16,14 @@ Our entry for **IDBI Innovate 2026 · Track 01 (Wealth Advisory)**. **Aanya** is
 - 🌗 **Light / dark mode**, responsive, single-screen layout.
 - 🔌 **Deployable** — one env var swaps synthetic data for IDBI sandbox APIs.
 
+## Screenshots
+
+| Snapshot & spending (light) | Goal plan (light) | Products (dark) |
+|---|---|---|
+| ![Snapshot](docs/screenshots/01-snapshot-charts.png) | ![Goal plan](docs/screenshots/02-goal-plan.png) | ![Products](docs/screenshots/03-products.png) |
+
+More in [docs/screenshots/](docs/screenshots/) and walked through in [docs/HOW_IT_WORKS.md](docs/HOW_IT_WORKS.md).
+
 ## Run it
 
 ```bash
