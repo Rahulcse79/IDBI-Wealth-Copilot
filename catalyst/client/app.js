@@ -64,20 +64,46 @@ if (window.speechSynthesis) {
   pickVoice();
   speechSynthesis.onvoiceschanged = pickVoice;
 }
+// Unlock speechSynthesis on the first user gesture — Chrome blocks/pauses it until then.
+let __speechUnlocked = false;
+function unlockSpeech() {
+  if (__speechUnlocked || !window.speechSynthesis) return;
+  __speechUnlocked = true;
+  try {
+    speechSynthesis.resume();
+    const u = new SpeechSynthesisUtterance(" ");
+    u.volume = 0;
+    speechSynthesis.speak(u);
+  } catch (e) {}
+}
+window.addEventListener("pointerdown", unlockSpeech, { once: true });
+window.addEventListener("keydown", unlockSpeech, { once: true });
+
 function speak(text) {
   if (!state.voiceOn || !window.speechSynthesis || !text) {
     setAvatar("idle");
     return;
   }
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text.replace(/[*#_`>]/g, ""));
-  if (voice) u.voice = voice;
-  u.rate = 0.8;
-  u.pitch = 1.05;
-  u.onstart = () => setAvatar("speaking");
-  u.onend = () => setAvatar("idle");
-  u.onerror = () => setAvatar("idle");
-  speechSynthesis.speak(u);
+  try {
+    speechSynthesis.cancel();
+    if (!voice) pickVoice();
+    const u = new SpeechSynthesisUtterance(text.replace(/[*#_`>]/g, ""));
+    if (voice) u.voice = voice;
+    u.rate = 0.8;
+    u.pitch = 1.05;
+    u.onstart = () => setAvatar("speaking");
+    u.onend = () => setAvatar("idle");
+    u.onerror = () => setAvatar("idle");
+    speechSynthesis.resume();
+    speechSynthesis.speak(u);
+    setTimeout(() => {
+      try {
+        speechSynthesis.resume();
+      } catch (e) {}
+    }, 250);
+  } catch (e) {
+    setAvatar("idle");
+  }
 }
 
 const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
