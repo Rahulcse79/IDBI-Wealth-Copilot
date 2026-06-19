@@ -68,6 +68,8 @@ idx = idx.replace(
     '    <script src="/static-api.js"></script>\n'
     '    <script src="/avatar.js"></script>\n    <script src="/app.js"></script>',
 )
+# Catalyst serves the client under an /app/ base path, so use RELATIVE asset paths.
+idx = idx.replace('href="/styles.css"', 'href="styles.css"').replace('src="/', 'src="')
 open(idx_path, "w").write(idx)
 
 # patch app.js api(): route through the static shim when present
