@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aanya · IDBI Wealth Copilot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="bg">
+      <span class="orb orb-teal"></span>
+      <span class="orb orb-violet"></span>
+      <span class="orb orb-amber"></span>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <!-- TOP BAR: logo · online status · customer · theme toggle -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-orb"></span>
+        <span class="brand-mark">IDBI</span>
+        <span class="brand-sub">Wealth Copilot</span>
+      </div>
+      <div class="topbar-right">
+        <span id="copilotBadge" class="badge">checking…</span>
+        <label class="cust-wrap">
+          <span class="cust-label">Customer</span>
+          <select id="customer" class="cust-select" aria-label="Customer"></select>
+        </label>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light or dark mode">
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <div class="app">
+      <!-- LEFT: 3D AI avatar -->
+      <aside class="left">
+        <div class="left-body">
+          <p class="eyebrow">IDBI Innovate 2026 · Wealth Advisory</p>
+          <h1>Meet <span class="grad">Aanya</span></h1>
+
+          <div class="avatar-stage">
+            <div class="avatar-halo"></div>
+            <canvas id="avatarCanvas"></canvas>
+            <div id="avatarFallback" class="avatar-fallback" hidden>
+              <span class="core"></span>
+            </div>
+            <div class="avatar-meta"><span class="dot"></span><span id="avatarState">online</span></div>
+          </div>
+
+          <div class="trust">
+            <span><b>Grounded</b> in real products</span>
+            <span><b>Explainable</b> every step</span>
+            <span><b>Compliant</b> by design</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT: conversation -->
+      <section class="right">
+        <header class="console-head">
+          <div class="console-title"><span class="pulse"></span> Conversation with Aanya</div>
+          <button id="voiceToggle" class="ghost-btn" aria-pressed="true" title="Toggle voice">
+            🔊 Voice on
+          </button>
+        </header>
+
+        <div class="quick" id="quick">
+          <button data-flow="start" class="chip"><i>✦</i> My snapshot</button>
+          <button data-flow="spending" class="chip"><i>◑</i> Where my money goes</button>
+          <button data-flow="goal" class="chip"><i>◎</i> Plan ₹50L house</button>
+          <button data-flow="retire" class="chip"><i>⏳</i> Retirement plan</button>
+          <button data-flow="risk" class="chip"><i>◭</i> My risk profile</button>
+          <button data-flow="products" class="chip"><i>★</i> Best products</button>
+          <button data-flow="safety" class="chip"><i>⛨</i> Are you safe?</button>
+        </div>
+
+        <div id="thread" class="thread" aria-live="polite"></div>
+
+        <form id="composer" class="composer">
+          <button type="button" id="micBtn" class="mic" aria-label="Speak">🎙</button>
+          <input
+            id="message"
+            type="text"
+            autocomplete="off"
+            placeholder="Ask Aanya about your money…"
+          />
+          <button type="submit" class="send" aria-label="Send">➤</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="/static-data.js"></script>
+    <script src="/static-api.js"></script>
+    <script src="/avatar.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
