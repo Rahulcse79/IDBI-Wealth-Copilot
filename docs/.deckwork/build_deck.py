@@ -119,7 +119,7 @@ add_paras(tf, [
     [("Team name:  ", 13, True, INK), ("Agentic_Hackers", 13, False, INK)],
     [("Team leader:  ", 13, True, INK), ("Gokul D", 13, False, INK)],
     [("Team size:  ", 13, True, INK), ("5", 13, False, INK)],
-    [("Problem Statement — Track 01 · Wealth Advisory", 12.5, True, ACCENT)],
+    [("Problem Statement — Track 01 · Digital Wealth Management", 12.5, True, ACCENT)],
     body("Wealth management and advisory remain fragmented and inaccessible to most customers. "
          "The absence of comprehensive insight into customer investment behaviour and spending "
          "limits timely, personalized, data-driven guidance.", 11),
@@ -266,11 +266,11 @@ for p in links_box.paragraphs:
         r = p.add_run(); r.text = "   →   https://github.com/Rahulcse79/IDBI-Wealth-Copilot"
         r.font.size = Pt(13); r.font.bold = False; r.font.color.rgb = LINKC; r.font.name = FONT
     elif t.startswith("Demo Video"):
-        r = p.add_run(); r.text = "   →   < add your 3-minute demo video link >"
-        r.font.size = Pt(13); r.font.italic = True; r.font.color.rgb = MUTED; r.font.name = FONT
+        r = p.add_run(); r.text = "   →   https://www.youtube.com/watch?v=RqVkE2hsj0k"
+        r.font.size = Pt(13); r.font.color.rgb = LINKC; r.font.name = FONT
     elif t.startswith("Final Product"):
-        r = p.add_run(); r.text = "   →   < add your deployed product link >"
-        r.font.size = Pt(13); r.font.italic = True; r.font.color.rgb = MUTED; r.font.name = FONT
+        r = p.add_run(); r.text = "   →   https://digital-wealth-management-60073126408.development.catalystserverless.in/app/index.html"
+        r.font.size = Pt(11); r.font.color.rgb = LINKC; r.font.name = FONT
 
 prs.save(DECK)
 print("Saved:", DECK)
